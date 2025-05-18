@@ -34,7 +34,7 @@ class RiotAPI(APIService):
         return url
 
 class RiotAPIFactory:
-    def __init__(self, api_key: RiotAPI):
+    def __init__(self, api_key: str):
         self.riot_client = RiotAPI(api_key)
 
     def get_puuid_by_riot_id(self, game_name, tagline):
