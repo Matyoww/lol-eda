@@ -19,8 +19,8 @@ class RiotAPI:
             url = f"{Clusters.ASIA.value}{url}"
         elif cluster == "SEA":
             url = f"{Clusters.SEA.value}{url}"
-        elif cluster == "PH2":
-            url = f"{Clusters.PH2.value}{url}"
+        elif cluster == "SG2":
+            url = f"{Clusters.SG2.value}{url}"
         url += f"&api_key={self.api_key}"
         return url
 
@@ -40,7 +40,7 @@ class RiotAPI:
 
     
     def get_free_champ_rotation(self, cluster):
-        endpoint = f"/lol/platform/v3/champion-rotations?"
+        endpoint = "/lol/platform/v3/champion-rotations?"
         url = self._url_builder(cluster, endpoint)
         data = send_get_request(url)
         return data['freeChampionIds']
